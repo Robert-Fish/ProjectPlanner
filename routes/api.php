@@ -21,3 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get("projects", 'ProjectsController@index');
 
 Route::post("projects", 'ProjectsController@store');
+
+Route::delete("project/{id}", 'ProjectsController@destroy');

@@ -24,4 +24,13 @@ class ProjectsController extends Controller
             return new ProjectResource($project);
         }
     }
+
+    public function destroy($id){
+        // Get Project
+        $project = Project::findOrFail($id);
+
+        if($project->delete()){
+            return new ProjectResource($project);
+        }
+    }
 }
